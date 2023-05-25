@@ -12,4 +12,17 @@ def on_select(event):
 
 #Tkinter GUI application window and setting its title.
 root = tk.Tk()
-root.tittle("Combobox Example")
+root.title("Combobox Example")
+
+
+#Creates an array of items
+items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
+
+#
+combo_box = ttk.Combobox(root, values=items)
+#Binding the on_select function.
+combo_box.bind("<<ComboboxSelected>>", on_select)
+
+combo_box.pack()
+
+root.mainloop()
